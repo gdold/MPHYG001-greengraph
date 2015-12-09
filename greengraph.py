@@ -1,7 +1,6 @@
 import numpy as np
 import geopy
 from map import Map
-import matplotlib.pyplot as plt
 
 class Greengraph(object):
     def __init__(self, start, end):
@@ -25,9 +24,3 @@ class Greengraph(object):
                 self.geolocate(self.start),
                 self.geolocate(self.end),
                 steps)]
-
-        
-mygraph=Greengraph('New York','Chicago')
-data = mygraph.green_between(20)
-plt.plot(data)
-plt.show()
