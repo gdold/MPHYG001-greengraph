@@ -1,7 +1,11 @@
 import numpy as np
 import geopy
+import requests
 from StringIO import StringIO
 from matplotlib import image as img
+import matplotlib.pyplot as plt
+
+
 
 class Greengraph(object):
     def __init__(self, start, end):
