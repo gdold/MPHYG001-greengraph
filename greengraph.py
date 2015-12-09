@@ -71,3 +71,4 @@ class Map(object):
 mygraph=Greengraph('New York','Chicago')
 data = mygraph.green_between(20)
 plt.plot(data)
+plt.show()
