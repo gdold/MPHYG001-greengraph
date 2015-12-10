@@ -3,7 +3,9 @@ import requests
 from StringIO import StringIO
 from matplotlib import image as img
 
-GoogleStaticMapsAPIkey = 'AIzaSyC4PIxXYTXo6ExGzQw0KonF6zVOLSRAb0E' # API key to prevent limit
+# Google API key to avoid hitting API call limit
+# Specific to Gavin Dold - do not duplicate
+GoogleStaticMapsAPIkey = 'AIzaSyC4PIxXYTXo6ExGzQw0KonF6zVOLSRAb0E'
 
 class Map(object):
     def __init__(self, lat, long, satellite=True,
