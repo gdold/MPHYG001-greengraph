@@ -3,6 +3,8 @@ import requests
 from StringIO import StringIO
 from matplotlib import image as img
 
+GoogleStaticMapsAPIkey = 'AIzaSyC4PIxXYTXo6ExGzQw0KonF6zVOLSRAb0E' # API key to prevent limit
+
 class Map(object):
     def __init__(self, lat, long, satellite=True,
             zoom=10, size=(400,400), sensor=False):
@@ -13,7 +15,8 @@ class Map(object):
             zoom= zoom,
             size= "x".join(map(str, size)),
             center= ",".join(map(str, (lat, long) )),
-            style="feature:all|element:labels|visibility:off"
+            style="feature:all|element:labels|visibility:off",
+            key=GoogleStaticMapsAPIkey
         )
 
         if satellite:
