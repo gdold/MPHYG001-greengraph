@@ -1,3 +1,5 @@
+installation: sudo python setup.py install
+
 usage: greengraph.py [-h] [--from START] [--to END] [--steps STEPS]
                      [--out OUT] [--format FORMAT]
 
@@ -8,7 +10,7 @@ optional arguments:
   -h, --help       show this help message and exit
   --from START     Starting location, defaults to New York
   --to END         End location, defaults to Chicago
-  --steps STEPS    Number of steps between start and end locations
+  --steps STEPS    Number of steps between start and end locations, default 20
   --out OUT        Filename to save plot to. Displays plot on screen instead
                    if not specified
   --format FORMAT  Optionally force an output format, overriding extension in
