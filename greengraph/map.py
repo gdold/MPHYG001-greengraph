@@ -4,7 +4,6 @@ from StringIO import StringIO
 from matplotlib import image as img
 
 # Google API key to avoid hitting API call limit
-# Specific to Gavin Dold - do not duplicate
 GoogleStaticMapsAPIkey = 'AIzaSyC4PIxXYTXo6ExGzQw0KonF6zVOLSRAb0E'
 
 class Map(object):
