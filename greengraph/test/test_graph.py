@@ -15,6 +15,7 @@ import os
 directory = os.path.dirname(os.path.abspath(__file__))
 
 def test_graph_Greengraph_geolocate(): # Test Greengraph.geolocate correctly calls geopy...geocode
+    # Patch geocode to avoid calling internet
     with patch.object(geopy.geocoders.GoogleV3,'geocode') as mockgeocode:
         testGreengraph = Greengraph('New York','Chicago')
         testGreengraph.geolocate('New York')
@@ -47,6 +48,7 @@ def test_graph_Greengraph_green_between():
     fakegeolocate = Mock(name="geolocate", side_effect=latlongcycle)
     steps = 10
     
+    # Patch requests and return saved image data
     with patch('requests.get', return_value=Mock(content=mock_imgfile.read())) as mock_get:
         with patch.object(Greengraph,'geolocate',fakegeolocate) as mockgeolocate:
             testGreengraph = Greengraph('New York','Chicago')
