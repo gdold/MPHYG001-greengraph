@@ -43,6 +43,9 @@ def test_graph_Greengraph_green_between():
     chicago_latlong = (2,2)
     fakegeolocate = Mock(name="geolocate", side_effect=[newyork_latlong,chicago_latlong])
     fakecount_green = Mock(name="count_green", return_value=300)
+    # NEED TO IMPORT PNG DATA FROM FILE
+    #fakeimgdata = img.imread(StringIO(PUT FILE DATA HERE))
+    
     with patch.object(Map,'count_green',fakecount_green) as mockcount_green:
         with patch.object(Greengraph,'geolocate',fakegeolocate) as mockgeolocate:
             testGreengraph = Greengraph('New York','Chicago')
@@ -51,6 +54,11 @@ def test_graph_Greengraph_green_between():
                 testGreengraph.geolocate(testGreengraph.start),
                 testGreengraph.geolocate(testGreengraph.end),
                 steps)
+            #with patch.object(requests,'get') as mock_get:
+            #    fakeimg_imread = Mock(name='imread', return_value=fakeimgdata)
+            #    with patch.object(img,'imread',fakeimg_imread):
+            #        print testGreengraph.green_between(steps)
             #print testGreengraph.green_between(steps) # Test works up to here
             
+ 
 test_graph_Greengraph_green_between()
