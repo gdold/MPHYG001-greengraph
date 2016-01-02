@@ -12,7 +12,7 @@ from mock import Mock, patch
 from itertools import cycle
 import os
 
-
+directory = os.path.dirname(os.path.abspath(__file__))
 
 def test_graph_Greengraph_geolocate(): # Test Greengraph.geolocate correctly calls geopy...geocode
     with patch.object(geopy.geocoders.GoogleV3,'geocode') as mockgeocode:
@@ -21,7 +21,7 @@ def test_graph_Greengraph_geolocate(): # Test Greengraph.geolocate correctly cal
         mockgeocode.assert_called_with('New York', exactly_one=False)
     print 'geolocate'
 
-test_graph_Greengraph_geolocate()
+#test_graph_Greengraph_geolocate()
 
 def test_graph_Greengraph_location_sequence(): # Test Greengraph.location_sequence works
     with patch.object(geopy.geocoders.GoogleV3,'geocode') as mockgeocode:
@@ -39,10 +39,10 @@ def test_graph_Greengraph_location_sequence(): # Test Greengraph.location_sequen
         assert equalitytest.all() == True
     print 'location_sequence'
 
-test_graph_Greengraph_location_sequence()
+#test_graph_Greengraph_location_sequence()
 
 def test_graph_Greengraph_green_between():
-    mock_imgfile = open(os.path.join('test','fixtures','London.png'),'rb')
+    mock_imgfile = open(os.path.join(directory,'fixtures','London.png'),'rb')
     latlongcycle = cycle([(1,1),(2,2)])
     fakegeolocate = Mock(name="geolocate", side_effect=latlongcycle)
     steps = 10
@@ -53,4 +53,4 @@ def test_graph_Greengraph_green_between():
             assert testGreengraph.green_between(steps) == ([106719]*steps)
     print 'green_between'
 
-test_graph_Greengraph_green_between()
+#test_graph_Greengraph_green_between()
