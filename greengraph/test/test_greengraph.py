@@ -6,7 +6,7 @@ from StringIO import StringIO
 from matplotlib import image as img
 import matplotlib.pyplot as plt
 from argparse import ArgumentParser
-import ..greengraph
+#import ..greengraph
 from ..graph import Greengraph
 from ..map import Map
 from mock import Mock, patch

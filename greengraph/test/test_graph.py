@@ -6,11 +6,11 @@ from StringIO import StringIO
 from matplotlib import image as img
 import matplotlib.pyplot as plt
 from argparse import ArgumentParser
-from graph import Greengraph
-from map import Map
-import greengraph
+from ..graph import Greengraph
+from ..map import Map
 from mock import Mock, patch
 from itertools import cycle
+import os
 
 
 
@@ -42,7 +42,7 @@ def test_graph_Greengraph_location_sequence(): # Test Greengraph.location_sequen
 test_graph_Greengraph_location_sequence()
 
 def test_graph_Greengraph_green_between():
-    mock_imgfile = open('London.png','rb')
+    mock_imgfile = open(os.path.join('test','fixtures','London.png'),'rb')
     latlongcycle = cycle([(1,1),(2,2)])
     fakegeolocate = Mock(name="geolocate", side_effect=latlongcycle)
     steps = 10
