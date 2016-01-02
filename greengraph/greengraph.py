@@ -23,8 +23,3 @@ def runGreengraph():
 
 if __name__ == "__main__":
     runGreengraph()
-
-# mygraph=Greengraph('New York','Chicago')
-# data = mygraph.green_between(20)
-# plt.plot(data)
-# plt.show()
